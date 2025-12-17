@@ -4,7 +4,7 @@ A TRC-1167 and Deterministic Deployment Proxy implementation and demostration fo
 
 ## Overview
 
-**Features**
+**Project Features**
 
 * Minimal Proxy Contracts Deployment (TRC-1167)
 * Determinisct Deployment Proxy
@@ -12,6 +12,10 @@ A TRC-1167 and Deterministic Deployment Proxy implementation and demostration fo
 * CREATE Clones Factory
 * CREATE2 Prediction
 * Bytecode deployments
+
+**Non-SC related**
+
+* Private key leak detection on pre-commit (prevents accidental pk uploads to version control systems like github)
 
 ## Prerequisites
 
