@@ -3,7 +3,7 @@
 
 pragma solidity ^0.8.20;
 
-import {Clones} from "./libs/Clones.sol";
+import {Clones} from "@openzeppelin/tron-contracts/contracts/proxy/Clones.sol";
 
 /**@title DeployClone implements TRC-1167 standard on TRON based on OpenZeppelin Clones and Create2
  * @dev Create2.sol Changes: TVM create2 prefix (0x41) is different to EVM (0xff), thus, a slight change is needed in Create2 library (Line 98) so it properly works on TRON. More details: https://developers.tron.network/docs/migrating-eth-contracts-to-tron#opcode-level-differences

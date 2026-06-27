@@ -1,6 +1,6 @@
 # Tron Clones
 
-A TRC-1167 and Deterministic Deployment Proxy implementation and demostration for TRON Blockchain
+A TRC-1167 and Deterministic Deployment Proxy implementation POC for TRON Blockchain
 
 ## Overview
 
@@ -81,28 +81,19 @@ pnpm test:shasta  #Test using Shasta testnet
 
 **SmartSweeperAccount.sol**
 
-- TRC-20 tokens + TRX sweeper contract template, tailored to be deployed wither using *cloneCreate2WithArgs()* or *cloneCreateWithArgs()*
+- TRC-20 tokens + TRX sweeper contract template, tailored to be deployed either using *cloneCreate2WithArgs()* or *cloneCreateWithArgs()*
 - Demonstrates contract owner "initialization" through Clones library  `cloneWithImmutableArgs()` and `cloneDeterministicWithImmutableArgs()` functions, eliminating risks of init front-running
 
 **DeterministicDeploymentProxy.sol (Under development)**
 
 * (Experimental) Demostrates Deterministic Deployment Proxy for TRON
 * It takes a contract bytecode and deploys it using CREATE2
-* Eventually aming to be fully compatible with https://github.com/Arachnid/deterministic-deployment-proxy
+* Eventually aming to be fully compatible with https://github.com/Arachnid/deterministic-deployment-proxy , we need to wait for CREATE2 compatibility improvements on TRON
 * Not fully tested yet
 
 ### Libraries and Utils
 
-**libs/Clones.sol**: Based on OpenZeppelin's minimal proxy contracts Library
-
-- Minimal proxy pattern for energy-efficient deployments (42k-52k energy per deployed clone)
-- Deterministic (create2) address calculation
-- Indeterministic (create) contract deployment
-- `predictDeterministicAddress`() function was modified so it works for TRON (CREATE2 prefix is 0x41)
-
-**util/Create2.sol:** Based on OpenZeppelin's create2 library
-
-* TRON port from OpenZeppelin Create2 helper, `computeAddress()` function was modified to use TRON's create2 prefix 0x41 instead of 0xff
+Using OpenZeppelin [tron-contracts](https://github.com/OpenZeppelin/tron-contracts)
 
 ## How does it work?
 
